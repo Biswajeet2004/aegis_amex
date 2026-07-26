@@ -2,10 +2,6 @@ services:
   - type: web
     name: aegis-gov-api
     runtime: docker
-    services:
-  - type: web
-    name: aegis-gov-api
-    runtime: docker
     plan: free
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
