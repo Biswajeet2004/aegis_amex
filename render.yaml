@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: aegis-gov-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: http://localhost:3000
+      - key: SIGNING_SECRET
+        generateValue: true
+      - key: SIDECAR_ATTESTATION
+        generateValue: true
+      - key: DATABASE_PATH
+        value: /tmp/aegis.db
